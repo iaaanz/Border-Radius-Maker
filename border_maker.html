@@ -19,6 +19,18 @@
             display: table;
         }
 
+        #container #git {
+            display: table;
+        }
+
+        #container #link {
+            float: right;
+            margin: 15px 0 12px 4px;
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: normal;
+        }
+
         #container #inputs {
             float: right;
             padding-left: 30px;
@@ -55,23 +67,30 @@
                 width: 160px;
                 padding-left: 10px;
             }
+        
+        #container #surface_oculto {
+            background: #6c34d4;
+            position: absolute;
+            width: 1px;
+            height: 1px;
+        }
 
-        #container #surface {
+        #container #surface_visivel {
             background: #e9eaee;
             float: left;
             border: 2px solid #ffffff;
-            padding: 40px 40px 40px 40px;
+            padding: 50px 50px 50px 50px;
             width: 460px;
             text-align: center;
             box-shadow: 1px 2px 6px rgba(0,0,0, 0.5);
             }
-                #container #surface textarea {
+                #container #surface_visivel textarea {
                     background: #fafafc;
                     border: 1px solid #5629a9;
                     border-radius: 10px;
                     resize: none;
                     width: 400px;
-                    height: 240px;
+                    height: 200px;
                     outline: none;
                     font: normal 15px Monaco, 'Courier New', monospace;
                     line-height: 20px;
@@ -83,9 +102,10 @@
 </head>
 <body>
     <div id="container">
-        <div id="surface">
-            <textarea id="codigo" onclick="copiar()" readonly="readonly"></textarea>
+        <div id="surface_visivel">
+            <textarea id="codigo" onclick="copy()" readonly="readonly"></textarea>
         </div>
+        <div id="surface_oculto"></div>
         <div id="inputs">
             <div class="input_radius" id="input_radius_tl">
                 <input type="text" id="input_tl" placeholder="Borda Esquerda Superior">
@@ -99,13 +119,12 @@
             <div class="input_radius" id="input_radius_br">
                 <input type="text" id="input_br" placeholder="Borda Direita Inferior">
             </div>
+            <a href="//github.com/iaaanz" id="git">
+                <img src="PNG/GitHub-Mark-Light-64px.png" width=50 height=50>
+                <h1 id="link">github.com/iaaanz</h1>
+            </a>
         </div>
     </div>
     <script src="script.js"></script>
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
 </body>
 </html>
